@@ -77,13 +77,5 @@ python -m nbconvert --to html "week1_Ayush Choudhary.ipynb"
 ```
 
 ## Contacts & Help
-- Mentor / Review: [Your mentor's name and email]
-- For Git issues, ask on the Slack channel or raise a quick PR and tag your mentor.
-
+ ayushchoudhary18481@gmail.com
 ---
-
-If you want, I can also:
-- Clean outputs in every notebook now to make the repo previewable on GitHub.
-- Add a `requirements.txt` listing the exact package versions used.
-
-Tell me which of those you'd like me to do next.
