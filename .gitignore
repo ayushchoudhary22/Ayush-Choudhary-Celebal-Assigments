@@ -1,6 +1,67 @@
-# CSV files
-*.csv
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
 
-# Excel files
+# ── Virtual Environments ───────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# ── Jupyter Notebook ───────────────────────────────────────────
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ── Data Files (large / sensitive) ────────────────────────────
+# Uncomment lines below if you want to exclude CSVs from git
+# *.csv
+# *.tsv
+# *.parquet
+# *.feather
+
+# Excel files (keep excluded — binary, large)
 *.xlsx
 *.xls
+
+# ── IDE / Editor ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+*.sublime-project
+*.sublime-workspace
+
+# ── OS Files ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Model / Output Files ──────────────────────────────────────
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.model
+*.pt
+*.pth
+*.onnx
+
+# ── Logs & Temp ───────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+~$*
+
+# ── Secrets / API Keys ────────────────────────────────────────
+.env
+secrets.json
+config_secret.py
