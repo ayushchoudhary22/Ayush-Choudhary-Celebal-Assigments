@@ -23,7 +23,7 @@ This repository contains all weekly assignment notebooks submitted as part of th
 | Week 1 | `week1_Ayush Choudhary.ipynb` | Python & Data Analysis Fundamentals | ✅ Submitted |
 | Week 2 | `week2_Ayush Choudhary.ipynb` | End-to-End ML Pipeline (Sales/Price Data) | ✅ Submitted |
 | Week 3 | `week3_Ayush Choudhaer.ipynb` | Unsupervised Learning — Country Clustering (K-Means, DBSCAN, PCA) | ✅ Submitted |
-| Week 4 | `week4_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
+| Week 4 | `week4_Ayush_Choudhary.ipynb` | CIFAR-10 Image Classification (ANN vs CNN) | ✅ Submitted |
 | Week 5 | `week5_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
 | Week 6 | `week6_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
 | Week 7 | `week7_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
@@ -39,7 +39,7 @@ Ayush Choudhary Celebal Assignments/
 ├── week1_Ayush Choudhary.ipynb             # Week 1 — Python & Data Analysis Fundamentals
 ├── week2_Ayush Choudhary.ipynb             # Week 2 — End-to-End ML Pipeline on Sales/Price Data
 ├── week3_Ayush Choudhaer.ipynb             # Week 3 — Country Clustering: K-Means, DBSCAN, PCA
-├── week4_Ayush Choudhary.ipynb             # Week 4 — (upcoming)
+├── week4_Ayush_Choudhary.ipynb             # Week 4 — CIFAR-10 Image Classification (ANN vs CNN)
 ├── week5_Ayush Choudhary.ipynb             # Week 5 — (upcoming)
 ├── week6_Ayush Choudhary.ipynb             # Week 6 — (upcoming)
 ├── week7_Ayush Choudhary.ipynb             # Week 7 — (upcoming)
@@ -192,6 +192,35 @@ SARIMA(1,1,1)(1,1,1)[12] — ADF test, seasonal decomposition, ACF/PACF, 12-mont
 
 ---
 
+## Week 4 — CIFAR-10 Image Classification (ANN vs CNN)
+
+> **Notebook:** `week4_Ayush_Choudhary.ipynb`
+
+### Dataset
+
+**CIFAR-10** — Standard image classification database
+- **Images:** 60,000 color images (50,000 Train, 10,000 Test)
+- **Dimensions:** 32×32×3 pixels (RGB)
+- **Classes:** 10 categories (airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck)
+
+### Model Architectures & Results
+
+We built and evaluated four different deep learning configurations:
+
+| Model | Architecture Highlights | Epochs | Test Accuracy |
+|-------|------------------------|--------|---------------|
+| **Baseline ANN** | Flat vectors, Dense(512), Dropout(0.3), Dense(256) | 10 | **41.74%** |
+| **Baseline CNN** | Conv2D(32, 64, 128), BatchNorm, MaxPooling2D | 10 | **64.16%** |
+| **Upgraded ANN** | Dense(1024), Dropout(0.3), Dense(512), Dense(256) | 20 (EarlyStopping) | **39.73%** |
+| **Augmented CNN** | Data Augmentation (Flip, Rotation, Zoom), Conv2D(32, 64, 128), BatchNorm | 20 (EarlyStopping) | **68.99%** |
+
+### Key Observations
+1. **Spatial Representation:** The CNN architectures significantly outperform the ANN models, showing that preserving 2D spatial features is crucial for image classification.
+2. **ANN Overfitting:** Scaling up the ANN to wider layers (Upgraded ANN) led to overfitting, resulting in slightly lower test performance (39.73% vs 41.74%).
+3. **Data Augmentation Benefit:** Adding random image transformations and training with EarlyStopping enabled the Augmented CNN to reach the highest accuracy (**68.99%**).
+
+---
+
 ## Setup & Installation
 
 ### Requirements
@@ -245,7 +274,7 @@ All notebooks follow a consistent style:
 - [x] Week 1 notebook complete and submitted
 - [x] Week 2 notebook complete and submitted
 - [x] Week 3 notebook complete and submitted — Country Clustering (K-Means, DBSCAN, PCA) | Silhouette: 0.2833
-- [ ] Week 4 notebook — upcoming
+- [x] Week 4 notebook complete and submitted — CIFAR-10 Classification (ANN vs CNN) | Augmented CNN: 68.99%
 - [ ] Week 5 notebook — upcoming
 - [ ] Week 6 notebook — upcoming
 - [ ] Week 7 notebook — upcoming
