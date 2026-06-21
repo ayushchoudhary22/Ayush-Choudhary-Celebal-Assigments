@@ -27,6 +27,10 @@ ENV/
 # *.parquet
 # *.feather
 
+# Exclude specific assignment datasets
+Country-data.csv
+tesla_deliveries_dataset_2015_2025.csv
+
 # Excel files (keep excluded — binary, large)
 *.xlsx
 *.xls
