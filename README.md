@@ -24,7 +24,7 @@ This repository contains all weekly assignment notebooks submitted as part of th
 | Week 2 | `week2_Ayush Choudhary.ipynb` | End-to-End ML Pipeline (Sales/Price Data) | ✅ Submitted |
 | Week 3 | `week3_Ayush Choudhaer.ipynb` | Unsupervised Learning — Country Clustering (K-Means, DBSCAN, PCA) | ✅ Submitted |
 | Week 4 | `week4_Ayush_Choudhary.ipynb` | CIFAR-10 Image Classification (ANN vs CNN) | ✅ Submitted |
-| Week 5 | `week5_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
+| Week 5 | `week5_Ayush Choudhary.ipynb` | Text Generation using Vanilla RNN, LSTM, and GRU | ✅ Submitted |
 | Week 6 | `week6_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
 | Week 7 | `week7_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
 | Week 8 | `week8_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
@@ -40,7 +40,7 @@ Ayush Choudhary Celebal Assignments/
 ├── week2_Ayush Choudhary.ipynb             # Week 2 — End-to-End ML Pipeline on Sales/Price Data
 ├── week3_Ayush Choudhaer.ipynb             # Week 3 — Country Clustering: K-Means, DBSCAN, PCA
 ├── week4_Ayush_Choudhary.ipynb             # Week 4 — CIFAR-10 Image Classification (ANN vs CNN)
-├── week5_Ayush Choudhary.ipynb             # Week 5 — (upcoming)
+├── week5_Ayush Choudhary.ipynb             # Week 5 — Text Generation: Simple RNN, LSTM, GRU
 ├── week6_Ayush Choudhary.ipynb             # Week 6 — (upcoming)
 ├── week7_Ayush Choudhary.ipynb             # Week 7 — (upcoming)
 ├── week8_Ayush Choudhary.ipynb             # Week 8 — (upcoming)
@@ -221,6 +221,26 @@ We built and evaluated four different deep learning configurations:
 
 ---
 
+## Week 5 — Text Generation using Simple RNN, LSTM, and GRU
+
+> **Notebook:** `week5_Ayush Choudhary.ipynb`
+
+### Task Description
+Develop and train sequence modeling architectures to learn grammatical structure and context from a custom deep learning text corpus, and evaluate text generation performance.
+
+### Configuration & Hyperparameters
+- **Custom Corpus:** 17-line detailed deep learning text database.
+- **Embedding Dimensions:** 64
+- **Hidden Units:** 128
+- **Epochs:** 200 (optimized sequence transduction)
+
+### Key Observations
+1. **Vanishing Gradients:** Vanilla RNN learned short-range patterns but struggled to maintain contextual memory for complex sentences.
+2. **Gated Architectures:** Both LSTM and GRU outperformed the basic RNN, showing stable training loss reduction and generating grammatical, meaningful text sequences.
+3. **Efficiency:** GRU trained faster than LSTM due to fewer gate parameters while achieving comparable prediction quality.
+
+---
+
 ## Setup & Installation
 
 ### Requirements
@@ -275,7 +295,7 @@ All notebooks follow a consistent style:
 - [x] Week 2 notebook complete and submitted
 - [x] Week 3 notebook complete and submitted — Country Clustering (K-Means, DBSCAN, PCA) | Silhouette: 0.2833
 - [x] Week 4 notebook complete and submitted — CIFAR-10 Classification (ANN vs CNN) | Augmented CNN: 68.99%
-- [ ] Week 5 notebook — upcoming
+- [x] Week 5 notebook complete and submitted — Text Generation: RNN vs LSTM vs GRU | 10-Word Generation
 - [ ] Week 6 notebook — upcoming
 - [ ] Week 7 notebook — upcoming
 - [ ] Week 8 notebook — upcoming
