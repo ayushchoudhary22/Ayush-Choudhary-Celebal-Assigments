@@ -18,15 +18,15 @@ This repository contains all weekly assignment notebooks submitted as part of th
 
 ## Weekly Assignment Progress
 
-| Week | Notebook | Topic | Status |
-|------|----------|-------|--------|
+| Week | Notebook / Folder | Topic | Status |
+|------|-------------------|-------|--------|
 | Week 1 | `week1_Ayush Choudhary.ipynb` | Python & Data Analysis Fundamentals | ✅ Submitted |
 | Week 2 | `week2_Ayush Choudhary.ipynb` | End-to-End ML Pipeline (Sales/Price Data) | ✅ Submitted |
 | Week 3 | `week3_Ayush Choudhaer.ipynb` | Unsupervised Learning — Country Clustering (K-Means, DBSCAN, PCA) | ✅ Submitted |
 | Week 4 | `week4_Ayush_Choudhary.ipynb` | CIFAR-10 Image Classification (ANN vs CNN) | ✅ Submitted |
 | Week 5 | `week5_Ayush Choudhary.ipynb` | Text Generation using Vanilla RNN, LSTM, and GRU | ✅ Submitted |
-| Week 6 | `week6_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
-| Week 7 | `week7_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
+| Week 6 | `week6_Ayush Choudhary.ipynb` | Autoencoder for Image Denoising — MNIST (PyTorch) | ✅ Submitted |
+| Week 7 | [`week7/`](file:///c:/Users/Ayush%20choudhary/Desktop/Ayush%20Choudhary%20Celebal%20Assigments/week7) | Document Question Answering System (RAG) (Streamlit) | ✅ Submitted |
 | Week 8 | `week8_Ayush Choudhary.ipynb` | — | 🔜 Upcoming |
 
 ---
@@ -41,9 +41,13 @@ Ayush Choudhary Celebal Assignments/
 ├── week3_Ayush Choudhaer.ipynb             # Week 3 — Country Clustering: K-Means, DBSCAN, PCA
 ├── week4_Ayush_Choudhary.ipynb             # Week 4 — CIFAR-10 Image Classification (ANN vs CNN)
 ├── week5_Ayush Choudhary.ipynb             # Week 5 — Text Generation: Simple RNN, LSTM, GRU
-├── week6_Ayush Choudhary.ipynb             # Week 6 — (upcoming)
-├── week7_Ayush Choudhary.ipynb             # Week 7 — (upcoming)
-├── week8_Ayush Choudhary.ipynb             # Week 8 — (upcoming)
+├── week6_Ayush Choudhary.ipynb             # Week 6 — Autoencoder for Image Denoising (PyTorch)
+├── week7/                                  # Week 7 — Document Question Answering System (RAG)
+│   ├── data/                               #   ├── Local PDF storage
+│   ├── app.py                              #   ├── Streamlit application UI
+│   ├── chatbot.py                          #   ├── Extractive QA logic & answer synthesis helper
+│   ├── vectorstore.py                      #   ├── TF-IDF Vectorizer & BM25 hybrid search
+│   ├── run.bat                             #   └── Single-click launcher batch script
 ├── tesla_deliveries_dataset_2015_2025.csv  # Dataset for Week 2 ML Pipeline
 ├── Country-data.csv                        # Dataset for Week 3 Country Clustering
 └── README.md                               # This file
@@ -241,9 +245,38 @@ Develop and train sequence modeling architectures to learn grammatical structure
 
 ---
 
+## Week 6 — Autoencoder for Image Denoising (MNIST)
+
+> **Notebook:** `week6_Ayush Choudhary.ipynb`
+
+### Task Description
+Build and train a deep learning architecture using **PyTorch** to perform image denoising on the MNIST handwritten digit database.
+
+### Architecture Highlights
+* **Encoder**: Convolutional layers (`Conv2d`, `ReLU`, `MaxPool2d`) that compress the input image of size $28 \times 28 \times 1$ into a low-dimensional latent space.
+* **Decoder**: Transposed convolutional layers (`ConvTranspose2d`, `ReLU`, `Sigmoid`) that reconstruct the original image from the compressed latent vector, filtering out added Gaussian noise.
+* **Loss Function**: Mean Squared Error (MSE) loss, directly comparing the reconstructed clean pixels with the target clean pixels.
+
+---
+
+## Week 7 — Document Question Answering System (RAG)
+
+> **Folder:** `week7/`
+
+### Task Description
+Implement a complete **Retrieval-Augmented Generation (RAG)** chatbot interface that operates **100% offline**, allowing users to upload and index custom PDFs (like resumes, guides, notes) and query them with automatic citation highlights.
+
+### Architectural Features
+* **TF-IDF Hashing Vectorizer (NumPy)**: Custom implementation using stop-word filtering, unigrams/bigrams, and sublinear TF scaling.
+* **BM25 Lexical Scorer**: Matches exact keywords to score search terms that only appear in specific target documents.
+* **Targeted Section Extraction & Flow Parser**: Synonyms detect intent (projects, experience, education, skills, contact) and isolate sections using a forward-decaying flow algorithm that resets when hitting a different section header.
+* **Context Boosting**: Document-level max scoring pulls in nearby chunks of matched target documents.
+
+---
+
 ## Setup & Installation
 
-### Requirements
+### Core Dependencies
 
 ```
 numpy
@@ -253,35 +286,40 @@ seaborn
 scikit-learn
 statsmodels
 xgboost
+torch
+torchvision
+pypdf
+streamlit
+google-generativeai
 ```
 
 Install everything:
 
 ```bash
-pip install numpy pandas matplotlib seaborn scikit-learn statsmodels xgboost
+pip install numpy pandas matplotlib seaborn scikit-learn statsmodels xgboost torch torchvision pypdf streamlit google-generativeai
 ```
 
-### Run on Windows (VS Code)
+### Run Jupyter Notebooks (Weeks 1-6)
 
 1. Open the folder in VS Code
 2. Select a Python 3 interpreter (Ctrl+Shift+P → "Select Interpreter")
-3. Open any `.ipynb` file
-4. Click **Run All** at the top of the notebook
+3. Open any `.ipynb` file and click **Run All**
 
-### Run with JupyterLab
+### Run Streamlit App (Week 7)
 
+Simply double-click or run the batch launcher inside the `week7` directory:
 ```bash
-pip install jupyterlab
-jupyter lab
+cd week7
+.\run.bat
 ```
 
 ---
 
 ## Coding Style
 
-All notebooks follow a consistent style:
+All notebooks and project folders follow a consistent style:
 
-- **Markdown cell above every code cell** — explains what the code does
+- **Markdown cell / comment blocks above code** — explains the step-by-step logic
 - **No inline comments inside code** — kept clean and readable
 - Code cells perform one focused task each
 - Section headers: `## Section Name`
@@ -292,12 +330,12 @@ All notebooks follow a consistent style:
 ## Submission Checklist
 
 - [x] Week 1 notebook complete and submitted
-- [x] Week 2 notebook complete and submitted
+- [x] Week 2 notebook complete and submitted — End-to-End ML Pipeline (Sales/Price Data)
 - [x] Week 3 notebook complete and submitted — Country Clustering (K-Means, DBSCAN, PCA) | Silhouette: 0.2833
 - [x] Week 4 notebook complete and submitted — CIFAR-10 Classification (ANN vs CNN) | Augmented CNN: 68.99%
-- [x] Week 5 notebook complete and submitted — Text Generation: RNN vs LSTM vs GRU | 10-Word Generation
-- [ ] Week 6 notebook — upcoming
-- [ ] Week 7 notebook — upcoming
+- [x] Week 5 notebook complete and submitted — Text Generation: RNN vs LSTM vs GRU
+- [x] Week 6 notebook complete and submitted — Autoencoder for MNIST Denoising (PyTorch)
+- [x] Week 7 project complete and submitted — Document QA System (RAG) (Streamlit)
 - [ ] Week 8 notebook — upcoming
 
 ---
@@ -306,3 +344,5 @@ All notebooks follow a consistent style:
 
 **Ayush Choudhary**
 Email: ayushchoudhary18481@gmail.com
+GitHub: [ayushchoudhary22](https://github.com/ayushchoudhary22)
+LinkedIn: [Ayush Choudhary](https://linkedin.com)

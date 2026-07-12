@@ -48,7 +48,7 @@ tesla_deliveries_dataset_2015_2025.csv
 Thumbs.db
 desktop.ini
 
-# ── Model / Output Files ──────────────────────────────────────
+# ── Model / Output / DB Files ──────────────────────────────────
 *.pkl
 *.pickle
 *.joblib
@@ -58,6 +58,7 @@ desktop.ini
 *.pt
 *.pth
 *.onnx
+vector_store.json
 
 # ── Logs & Temp ───────────────────────────────────────────────
 *.log

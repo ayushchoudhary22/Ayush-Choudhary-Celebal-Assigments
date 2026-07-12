@@ -1,0 +1,29 @@
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Local Vector Database (automatically regenerated)
+vector_store.json
+
+# Local data uploads (Optional: uncomment if you want to keep data/ empty on GitHub)
+# data/*
+# !data/.gitkeep
+
+# IDE and Editor configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Log files
+*.log
