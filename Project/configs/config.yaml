@@ -1,0 +1,85 @@
+# RetailSense AI: Global Project Configuration Parameters
+# Enterprise Fortune 500 Configuration Schema
+
+project:
+  name: "RetailSense AI"
+  version: "1.0.0"
+  organization: "Celebal Technologies"
+  author: "Ayush Choudhary"
+  domain: "Retail Demand Forecasting & Inventory Intelligence"
+  random_seed: 42
+
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  data_interim: "data/interim"
+  models_dir: "models"
+  logs_dir: "logs"
+  reports_dir: "reports"
+  notebooks_dir: "notebooks"
+
+data_processing:
+  raw_train_file: "train.csv"
+  raw_test_file: "test.csv"
+  sample_sub_file: "sample_submission.csv"
+  target_column: "sales"
+  date_column: "date"
+  store_column: "store"
+  item_column: "item"
+  downcast_dtypes: true
+
+feature_engineering:
+  lags: [1, 7, 14, 30, 60, 90]
+  rolling_windows: [7, 14, 30]
+  rolling_stats: ["mean", "std", "min", "max"]
+  ema_spans: [7, 30]
+  calendar_features: ["year", "month", "quarter", "weekofyear", "day", "dayofweek", "is_weekend"]
+
+model_training:
+  temporal_split:
+    train_end_date: "2017-09-30"
+    val_start_date: "2017-10-01"
+  cross_validation:
+    n_splits: 5
+    max_train_size: null
+  xgboost_params:
+    n_estimators: 300
+    learning_rate: 0.05
+    max_depth: 6
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    n_jobs: -1
+  lightgbm_params:
+    n_estimators: 300
+    learning_rate: 0.05
+    num_leaves: 31
+    random_state: 42
+    n_jobs: -1
+    verbose: -1
+  catboost_params:
+    iterations: 300
+    learning_rate: 0.05
+    depth: 6
+    random_seed: 42
+    verbose: 0
+
+financial_assumptions:
+  avg_unit_price: 25.0         # USD per unit
+  holding_cost_rate: 0.20       # 20% annual inventory holding cost
+  stockout_margin_loss: 10.0   # USD lost profit margin per missed unit
+  lead_time_days: 7            # Order replenishment lead time
+  target_service_level: 0.95   # 95% service level (Z = 1.645)
+  z_score: 1.645
+
+logging:
+  level: "INFO"
+  log_filename: "retailsense.log"
+  max_bytes: 10485760          # 10MB
+  backup_count: 5
+
+dashboard:
+  title: "RetailSense AI — Executive Inventory Intelligence Platform"
+  theme: "dark"
+  default_store: 1
+  default_item: 1

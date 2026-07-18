@@ -1,0 +1,45 @@
+# Python / Virtualenv
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# CatBoost training logs (auto-generated)
+notebooks/catboost_info/
+catboost_info/
+
+# Scratch / temporary scripts (not part of deliverable)
+scratch/
+
+# Pytest cache
+.pytest_cache/
+
+# Data & Models (ignore raw/processed heavy artifacts, retain structure)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/external/*
+!data/external/.gitkeep
+models/*
+!models/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Interview Prep (Private - Do not upload to GitHub)
+docs/PPO_INTERVIEW_PREP.md
+docs/TECH_STACK.md
+docs/PPO_STRICT_REVIEW_REPORT.md
