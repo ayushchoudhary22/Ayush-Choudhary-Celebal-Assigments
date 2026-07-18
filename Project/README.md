@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🚀 RetailSense AI
+#  RetailSense AI
 
-### Enterprise Multi-Horizon Retail Demand Forecasting & Inventory Decision Intelligence Platform
+### Multi-Series Forecasting for Retail Demand Optimization
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)](https://python.org)
 [![Kaggle](https://img.shields.io/badge/Kaggle-Demand%20Forecasting-20BEFF?logo=kaggle)](https://www.kaggle.com/competitions/demand-forecasting-kernels-only/overview)
